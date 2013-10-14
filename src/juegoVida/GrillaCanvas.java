@@ -57,9 +57,7 @@ public class GrillaCanvas extends JPanel implements MouseListener, MouseMotionLi
      * 
      */
     public void pintarGrilla(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                RenderingHints.VALUE_ANTIALIAS_ON);
+        Graphics2D g2d = (Graphics2D) g;        
         g2d.setColor(Color.GRAY);
         // pinto la cuadricula
         g2d.drawRect(0, 0, ancho, largo);
