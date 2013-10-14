@@ -118,7 +118,7 @@ public class GrillaCanvas extends JPanel implements MouseListener, MouseMotionLi
         }
         repaint();
     }
-
+// <editor-fold defaultstate="collapsed" desc="Core del juego">  
     public int obtenerAlrededores(int fila, int columna, int[][] matriz) {
         int acum = 0;
         fila--;
@@ -132,12 +132,13 @@ public class GrillaCanvas extends JPanel implements MouseListener, MouseMotionLi
         }
         return acum;
     }
-
+    
     public void generarJuego() {
         int[][] m = new int[this.matriz.length][this.matriz[0].length];
         for (int x = 0; x < this.matriz.length; x++) {
             for (int y = 0; y < this.matriz[0].length; y++) {
                 if (this.matriz[x][y] == 1) {
+                    //Una célula viva con 2 ó 3 células vecinas vivas sigue viva, en otro caso muere o permanece muerta (por "soledad" o "superpoblación").
                     if (obtenerAlrededores(x, y, this.matriz) == 2 || obtenerAlrededores(x, y, this.matriz) == 3) {
                         m[x][y] = 1;
                     } else {
@@ -152,7 +153,7 @@ public class GrillaCanvas extends JPanel implements MouseListener, MouseMotionLi
         }
         this.matriz = m;
     }
-
+// </editor-fold> 
     public void siguienteGeneracion() {
         generarJuego();
         repaint();
