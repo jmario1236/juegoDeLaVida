@@ -17,3 +17,5 @@ La celula posee ocho celulas vecina que son la que estan alrededor de ella
 
 Ellas no mas tienen dos estados 'encendido' o 'viva' y 'apagado' o 'muerta' y el estado de todas evolucionan de acuerdo
 a un tiempo en concreto.
+
+
